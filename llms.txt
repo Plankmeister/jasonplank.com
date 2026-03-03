@@ -1,0 +1,47 @@
+# Jason Plank — jasonplank.com
+
+## About
+Jason Plank is a Digital Marketing Strategist based in Memphis, TN with over 20 years of experience leading high-impact online initiatives. He currently works at Baker Donelson, one of the nation's largest law firms, where he manages the firm's digital presence across multiple platforms.
+
+## Professional Focus
+- Digital marketing strategy and execution
+- SEO, data analytics, and content strategy
+- Email marketing program development
+- Social media strategy and training
+- Podcast production (Everybody Leads podcast)
+- AI integration in legal marketing workflows
+- Website development and optimization
+
+## Current Role
+Digital Marketing Strategist at Baker Donelson (July 2016 – Present, Memphis, TN)
+- Plans, develops, and evaluates digital strategy across online platforms
+- Executes outbound marketing programs driving revenue and lead generation
+- Maintains the firm's public website and coordinates social media presence
+- Trains attorneys and staff on social media best practices
+- Produces podcasts and monitors key metrics for digital effectiveness
+
+## Previous Role
+Internet Content Director at WMC-TV / Action News 5 (July 2003 – December 2011, Memphis, TN)
+- Managed content and layout of a local television news website
+- Implemented social media strategies and campaigns
+- Managed the rollout of a 17-community local news website network
+
+## Education
+Otterbein University — B.A. Communication and Media Studies
+
+## Awards
+- LMA Southeast Winner — Website, Total Overhaul (September 2017)
+- Mid-South Emmy Nominee — Interactivity, 25th Annual Mid-South Emmy Awards (January 2011)
+
+## Notable Projects
+- Everybody Leads Podcast: Produced the leadership podcast for Baker Donelson's Chairman & CEO
+- Baker Donelson Website Overhaul: Led award-winning total overhaul of the firm's public website
+- AI-Powered Legal Marketing: Integrating AI tools (Claude, Gemini, ChatGPT) into legal marketing workflows
+- 17-Community News Network: Built a network of community-focused local news websites at WMC-TV
+- Reds Scoreboard: Hardware project — ESP32-based MLB scoreboard with TFT display and MLB Stats API
+- Plank Family Meal-o-Matic: Full-stack web app using Google Cloud Run, Firestore, Gemini AI, and Kroger API for automated meal planning
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/jasonplank1
+- Website: https://jasonplank.com
+- Email: jasonplank+websitecontact@gmail.com
