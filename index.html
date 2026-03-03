@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Plank — Digital Marketing Pro</title>
+    <meta name="description" content="Jason Plank — Digital Marketing Pro driving growth via AI, Data, SEO & Content Strategy. 20+ years of experience in digital marketing, based in Memphis, TN.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --orange: #FB4F14;
+            --orange-light: #FF6B35;
+            --orange-glow: rgba(251, 79, 20, 0.3);
+            --black: #0A0A0A;
+            --black-light: #1A1A1A;
+            --black-card: #141414;
+            --gray-dark: #2A2A2A;
+            --gray: #888;
+            --gray-light: #BBB;
+            --white: #F5F5F5;
+            --white-pure: #FFFFFF;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a { color: var(--orange); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: var(--orange-light); }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========== NAV ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(251, 79, 20, 0.15);
+            transition: background 0.3s;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .nav-logo span { color: var(--orange); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--orange-glow) 0%, transparent 70%);
+            animation: pulse 6s ease-in-out infinite alternate;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(251, 79, 20, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); opacity: 0.5; }
+            to { transform: scale(1.2); opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--orange);
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            border: 1px solid var(--orange);
+            border-radius: 4px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 16px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-headline {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--gray-light);
+            margin-bottom: 32px;
+            max-width: 650px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--orange);
+            color: var(--white-pure);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 32px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-cta:hover {
+            color: var(--white-pure);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--orange-glow);
+        }
+
+        .hero-cta svg { width: 18px; height: 18px; }
+
+        /* ========== SECTIONS ========== */
+        section { padding: 100px 0; }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--orange);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: var(--orange);
+            border-radius: 2px;
+            margin-top: 16px;
+        }
+
+        /* ========== ABOUT ========== */
+        .about { background: var(--black-light); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--gray-light);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .interest-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--gray-dark);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .interest-tag .emoji { font-size: 1.1rem; }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--black-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--orange);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        /* ========== EXPERIENCE ========== */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--orange), var(--gray-dark));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 48px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            background: var(--orange);
+            border-radius: 50%;
+            border: 3px solid var(--black);
+        }
+
+        .timeline-company {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .timeline-role {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .timeline-dates {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        .timeline-desc {
+            color: var(--gray-light);
+            margin-bottom: 12px;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .timeline-bullets li {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 2px;
+            background: var(--orange);
+        }
+
+        /* ========== SKILLS ========== */
+        .skills { background: var(--black-light); }
+
+        .skills-group {
+            margin-bottom: 36px;
+        }
+
+        .skills-group-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 10px 20px;
+            background: var(--black-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--white);
+            transition: border-color 0.3s, background 0.3s, transform 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--orange);
+            background: rgba(251, 79, 20, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .skill-tag.featured {
+            border-color: var(--orange);
+            background: rgba(251, 79, 20, 0.08);
+        }
+
+        /* ========== AWARDS ========== */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .award-card {
+            background: var(--black-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .award-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-4px);
+        }
+
+        .award-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--orange), var(--orange-light));
+        }
+
+        .award-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .award-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .award-issuer {
+            font-size: 0.9rem;
+            color: var(--orange);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .award-date {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .award-desc {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+        }
+
+        /* ========== PROJECTS ========== */
+        .projects { background: var(--black-light); }
+
+        .projects-subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--white);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--gray-dark);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: var(--black-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 32px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-4px);
+        }
+
+        .project-card.featured {
+            border: 1px solid rgba(251, 79, 20, 0.3);
+            background: linear-gradient(135deg, var(--black-card), rgba(251, 79, 20, 0.05));
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--orange);
+            margin-bottom: 12px;
+            padding: 4px 10px;
+            background: rgba(251, 79, 20, 0.1);
+            border-radius: 4px;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+            margin-bottom: 16px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-pill {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            background: var(--gray-dark);
+            border-radius: 4px;
+            color: var(--gray-light);
+        }
+
+        /* ========== CONTACT ========== */
+        .contact {
+            text-align: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--orange-glow) 0%, transparent 70%);
+            opacity: 0.3;
+        }
+
+        .contact .section-header { text-align: center; }
+
+        .contact-text {
+            font-size: 1.1rem;
+            color: var(--gray-light);
+            max-width: 550px;
+            margin: 0 auto 36px;
+            position: relative;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-btn.primary {
+            background: var(--orange);
+            color: var(--white-pure);
+        }
+
+        .contact-btn.primary:hover {
+            color: var(--white-pure);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--orange-glow);
+        }
+
+        .contact-btn.secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--gray-dark);
+        }
+
+        .contact-btn.secondary:hover {
+            border-color: var(--orange);
+            transform: translateY(-2px);
+        }
+
+        .contact-btn svg { width: 18px; height: 18px; }
+
+        /* ========== FOOTER ========== */
+        footer {
+            text-align: center;
+            padding: 32px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.97);
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid rgba(251, 79, 20, 0.15);
+            }
+            .nav-toggle { display: flex; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .awards-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .contact-links { flex-direction: column; align-items: center; }
+
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="container">
+            <a href="#" class="nav-logo">Jason<span>Plank</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-label">Memphis, TN</div>
+                <h1>Jason <span class="highlight">Plank</span></h1>
+                <p class="hero-headline">Digital Marketing Pro driving growth via AI, Data, SEO & Content Strategy. 20+ years connecting the dots between technology, creativity, and business.</p>
+                <a href="https://www.linkedin.com/in/jasonplank1" target="_blank" rel="noopener" class="hero-cta">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">About Me</div>
+                <h2 class="section-title">Connecting the Dots</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text fade-in">
+                    <p>I have over two decades of experience leading high-impact online initiatives, from law firm websites and email marketing to SEO, data analytics, social media strategy, and podcast production. At Baker Donelson, one of the nation's largest law firms, I manage the firm's digital presence across multiple platforms.</p>
+                    <p>I enjoy connecting the dots between technology, creativity, and business development, working to support attorneys in reaching their goals and growing client relationships. I make complex platforms more effective, find insights in the data, and stay curious about new tools that can improve how we work and engage.</p>
+                    <p>Lately, I've been diving into the many ways AI can help add to and streamline this work. I'm always open to new ideas, new challenges, and conversations about how to do smart marketing in complex environments.</p>
+                    <div class="about-interests">
+                        <span class="interest-tag"><span class="emoji">&#127939;</span> Runner</span>
+                        <span class="interest-tag"><span class="emoji">&#127918;</span> Gamer</span>
+                        <span class="interest-tag"><span class="emoji">&#127944;</span> Bengals Fan</span>
+                        <span class="interest-tag"><span class="emoji">&#129302;</span> AI Enthusiast</span>
+                    </div>
+                </div>
+                <div class="about-stats fade-in">
+                    <div class="stat-card">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Years Leading Online Initiatives</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">14+</div>
+                        <div class="stat-label">Years Experience in Legal Marketing</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Half Marathons Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Super Bowls My Favorite Team Has Lost</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Career</div>
+                <h2 class="section-title">Experience</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-company">Baker Donelson</div>
+                    <div class="timeline-role">Digital Marketing Strategist</div>
+                    <div class="timeline-dates">Jul 2016 &ndash; Present &middot; Memphis, TN</div>
+                    <ul class="timeline-bullets">
+                        <li>Planning, developing, implementing, and evaluating digital strategy across online platforms</li>
+                        <li>Executing outbound marketing programs that drive revenue and lead generation</li>
+                        <li>Developing and managing email marketing programs</li>
+                        <li>Maintaining the firm's public website and coordinating social media presence</li>
+                        <li>Training attorneys and staff on social media best practices for business development</li>
+                        <li>Producing podcasts and monitoring key metrics for digital program effectiveness</li>
+                    </ul>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-company">Baker Donelson</div>
+                    <div class="timeline-role">Podcast Producer &mdash; <em>Everybody Leads</em></div>
+                    <div class="timeline-dates">Concurrent role with Tim Lupinacci, Chairman &amp; CEO</div>
+                    <p class="timeline-desc">Oversaw all technical aspects of the "Everybody Leads" podcast including sound engineering, editing, and publishing. Collaborated closely with host and guests to ensure quality recording. Promoted the podcast through targeted social media campaigns.</p>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-company">Baker Donelson</div>
+                    <div class="timeline-role">Digital Marketing Specialist</div>
+                    <div class="timeline-dates">Dec 2011 &ndash; Jul 2016 &middot; Memphis, TN</div>
+                    <ul class="timeline-bullets">
+                        <li>Coordinated email marketing campaigns for key stakeholders</li>
+                        <li>Maintained public website and social media presence</li>
+                        <li>Trained firm staff and attorneys on social media use and best practices</li>
+                        <li>Built micro-websites and blogs for specific marketing initiatives</li>
+                        <li>Optimized firm websites for search engines and advised on SEO best practices</li>
+                        <li>Promoted to Digital Marketing Strategist in July 2016</li>
+                    </ul>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-company">WMC-TV (Action News 5)</div>
+                    <div class="timeline-role">Internet Content Director</div>
+                    <div class="timeline-dates">Jul 2003 &ndash; Dec 2011 &middot; Memphis, TN</div>
+                    <ul class="timeline-bullets">
+                        <li>Managed staffing, content, and layout of a local television news website</li>
+                        <li>Implemented social media strategies and campaigns</li>
+                        <li>Tracked website and social media campaign performance</li>
+                        <li>Developed newsgathering processes with new technologies</li>
+                        <li>Managed the roll-out of a 17-community local news website network</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fade-in" style="margin-top: 40px; padding: 24px; background: var(--black-card); border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
+                <h4 style="margin-bottom: 8px;">Education</h4>
+                <p style="color: var(--gray-light);"><strong>Otterbein University</strong> &mdash; B.A. Communication and Media Studies</p>
+                <p style="color: var(--gray); font-size: 0.9rem;">Lambda Gamma Epsilon &middot; WOBN-FM Radio &middot; WOCC-TV Campus Television</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Expertise</div>
+                <h2 class="section-title">Skills &amp; Tools</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="skills-group fade-in">
+                <h3 class="skills-group-title">Strategy &amp; Marketing</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag featured">Digital Marketing Strategy</span>
+                    <span class="skill-tag featured">SEO</span>
+                    <span class="skill-tag">Email Marketing</span>
+                    <span class="skill-tag">Social Media Marketing</span>
+                    <span class="skill-tag">Marketing Strategy</span>
+                    <span class="skill-tag">Digital Strategy</span>
+                    <span class="skill-tag">Content Management</span>
+                </div>
+            </div>
+
+            <div class="skills-group fade-in">
+                <h3 class="skills-group-title">Technical</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag featured">Web Analytics (GA4)</span>
+                    <span class="skill-tag featured">HTML</span>
+                    <span class="skill-tag">Website Development</span>
+                    <span class="skill-tag">Web Development</span>
+                    <span class="skill-tag">WordPress</span>
+                    <span class="skill-tag">CMS</span>
+                </div>
+            </div>
+
+            <div class="skills-group fade-in">
+                <h3 class="skills-group-title">Leadership &amp; Production</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Project Management</span>
+                    <span class="skill-tag">Internal Training</span>
+                    <span class="skill-tag">Podcasting</span>
+                    <span class="skill-tag">Broadcast</span>
+                </div>
+            </div>
+
+            <div class="skills-group fade-in">
+                <h3 class="skills-group-title">Emerging</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag featured">AI / Artificial Intelligence</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section class="awards" id="awards">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Recognition</div>
+                <h2 class="section-title">Awards &amp; Honors</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="awards-grid">
+                <div class="award-card fade-in">
+                    <div class="award-icon">&#127942;</div>
+                    <h3 class="award-title">Winner &mdash; Website, Total Overhaul</h3>
+                    <div class="award-issuer">Legal Marketing Association &mdash; Southeast</div>
+                    <div class="award-date">September 2017</div>
+                    <p class="award-desc">Recognized for leading a complete overhaul of Baker Donelson's public website, earning the top award from the LMA Southeast chapter.</p>
+                </div>
+                <div class="award-card fade-in">
+                    <div class="award-icon">&#127909;</div>
+                    <h3 class="award-title">Nominee &mdash; Interactivity</h3>
+                    <div class="award-issuer">25th Annual Mid-South Emmy Awards</div>
+                    <div class="award-date">January 2011</div>
+                    <p class="award-desc">Nominated for a Mid-South Emmy in "Interactivity" for "Action News 5 Weather Chat," a weekly interactive webshow on WMCTV.com.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Work</div>
+                <h2 class="section-title">Projects</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <h3 class="projects-subtitle fade-in">Recent Personal &amp; Side Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card featured fade-in">
+                    <div class="project-tag">Hardware + API</div>
+                    <h4 class="project-title">Reds Scoreboard</h4>
+                    <p class="project-desc">A dedicated, always-on MLB scoreboard built around an ESP32 microcontroller and a 3.5" TFT display. Connects to the MLB Stats API over WiFi, pulling live game data, standings, schedules, and statistics across 12 purpose-built screens. Runs headless &mdash; plug it in, it configures itself through a captive portal, and from then on it just goes.</p>
+                    <div class="project-tech">
+                        <span class="tech-pill">ESP32</span>
+                        <span class="tech-pill">TFT Display</span>
+                        <span class="tech-pill">MLB Stats API</span>
+                        <span class="tech-pill">WiFi</span>
+                        <span class="tech-pill">C++</span>
+                    </div>
+                </div>
+                <div class="project-card featured fade-in">
+                    <div class="project-tag">Full-Stack + AI</div>
+                    <h4 class="project-title">Plank Family Meal-o-Matic</h4>
+                    <p class="project-desc">A full-stack web application built to solve a real household problem: streamlining weekly meal planning and grocery shopping. Generates personalized weekly dinner plans from a family recipe library and automatically populates a Kroger shopping cart with all needed ingredients. Features a custom 1950s diner-themed interface.</p>
+                    <div class="project-tech">
+                        <span class="tech-pill">Google Cloud Run</span>
+                        <span class="tech-pill">Firestore</span>
+                        <span class="tech-pill">Gemini AI</span>
+                        <span class="tech-pill">Kroger API</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="projects-subtitle fade-in">Professional Highlights</h3>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-tag">Podcast</div>
+                    <h4 class="project-title">Everybody Leads Podcast</h4>
+                    <p class="project-desc">Produced and launched the leadership podcast for Baker Donelson's Chairman &amp; CEO, Tim Lupinacci. Handled all technical production including sound engineering, editing, publishing, and social media promotion.</p>
+                    <div class="project-tech">
+                        <span class="tech-pill">Audio Production</span>
+                        <span class="tech-pill">Social Media</span>
+                        <span class="tech-pill">Marketing</span>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-tag">Web</div>
+                    <h4 class="project-title">Baker Donelson Website Overhaul</h4>
+                    <p class="project-desc">Led a total overhaul of the firm's public website, earning the LMA Southeast award for "Website, Total Overhaul" in 2017. Transformed the digital presence of one of the nation's largest law firms.</p>
+                    <div class="project-tech">
+                        <span class="tech-pill">Web Development</span>
+                        <span class="tech-pill">UX</span>
+                        <span class="tech-pill">CMS</span>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-tag">AI</div>
+                    <h4 class="project-title">Custom GPT &mdash; Football Officiating Expert</h4>
+                    <p class="project-desc">Created a custom GPT using the NFL Rulebook as a knowledge source, demonstrating hands-on AI application skills. Has written publicly about AI tools and their marketing applications.</p>
+                    <div class="project-tech">
+                        <span class="tech-pill">ChatGPT</span>
+                        <span class="tech-pill">AI</span>
+                        <span class="tech-pill">Prompt Engineering</span>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-tag">Media</div>
+                    <h4 class="project-title">17-Community News Network</h4>
+                    <p class="project-desc">At WMC-TV, managed the rollout of a network of 17 community-focused local news websites, expanding the station's digital footprint across the Memphis metro area.</p>
+                    <div class="project-tech">
+                        <span class="tech-pill">Web Development</span>
+                        <span class="tech-pill">Content Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Get in Touch</div>
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="section-divider" style="margin: 16px auto 0;"></div>
+            </div>
+            <p class="contact-text fade-in">I'm always open to new ideas, new challenges, and conversations about how to do smart marketing in complex environments.</p>
+            <div class="contact-links fade-in">
+                <a href="https://www.linkedin.com/in/jasonplank1" target="_blank" rel="noopener" class="contact-btn primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="mailto:jason@jasonplank.com" class="contact-btn secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    Email Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Jason Plank. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll-triggered fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
