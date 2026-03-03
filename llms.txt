@@ -38,7 +38,7 @@ Otterbein University — B.A. Communication and Media Studies
 - Baker Donelson Website Overhaul: Led award-winning total overhaul of the firm's public website
 - AI-Powered Legal Marketing: Integrating AI tools (Claude, Gemini, ChatGPT) into legal marketing workflows
 - 17-Community News Network: Built a network of community-focused local news websites at WMC-TV
-- Reds Scoreboard: Hardware project — ESP32-based MLB scoreboard with TFT display and MLB Stats API
+- Reds Game Center: Hardware project — ESP32-based MLB scoreboard focused on the Cincinnati Reds, with TFT display and MLB Stats API
 - Plank Family Meal-o-Matic: Full-stack web app using Google Cloud Run, Firestore, Gemini AI, and Kroger API for automated meal planning
 
 ## Contact
