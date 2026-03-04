@@ -1102,7 +1102,7 @@
                 <div class="timeline-item fade-in">
                     <div class="timeline-company">Baker Donelson</div>
                     <div class="timeline-role">Digital Marketing Strategist</div>
-                    <div class="timeline-dates">Jul 2016 &ndash; Present &middot; Memphis, TN</div>
+                    <div class="timeline-dates">July 2016 &ndash; Present &middot; Memphis, TN</div>
                     <ul class="timeline-bullets">
                         <li>Planning, developing, implementing, and evaluating digital strategy across online platforms</li>
                         <li>Executing outbound marketing programs that drive revenue and lead generation</li>
@@ -1116,12 +1116,12 @@
                     <div class="timeline-company">Baker Donelson</div>
                     <div class="timeline-role">Podcast Producer &mdash; <em>Everybody Leads</em></div>
                     <div class="timeline-dates">Concurrent role with Tim Lupinacci, Chairman &amp; CEO</div>
-                    <p class="timeline-desc">Oversaw all technical aspects of the "Everybody Leads" podcast including sound engineering, editing, and publishing. Collaborated closely with host and guests to ensure quality recording. Promoted the podcast through targeted social media campaigns.</p>
+                    <p class="timeline-desc">Oversaw all technical aspects of the <em>Everybody Leads</em> podcast including sound engineering, editing, and publishing. Collaborated closely with host and guests to ensure quality recording. Promoted the podcast through targeted social media campaigns.</p>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-company">Baker Donelson</div>
                     <div class="timeline-role">Digital Marketing Specialist</div>
-                    <div class="timeline-dates">Dec 2011 &ndash; Jul 2016 &middot; Memphis, TN</div>
+                    <div class="timeline-dates">December 2011 &ndash; July 2016 &middot; Memphis, TN</div>
                     <ul class="timeline-bullets">
                         <li>Coordinated email marketing campaigns for key stakeholders</li>
                         <li>Maintained public website and social media presence</li>
@@ -1134,7 +1134,7 @@
                 <div class="timeline-item fade-in">
                     <div class="timeline-company">WMC-TV (Action News 5)</div>
                     <div class="timeline-role">Internet Content Director</div>
-                    <div class="timeline-dates">Jul 2003 &ndash; Dec 2011 &middot; Memphis, TN</div>
+                    <div class="timeline-dates">July 2003 &ndash; December 2011 &middot; Memphis, TN</div>
                     <ul class="timeline-bullets">
                         <li>Managed staffing, content, and layout of a local television news website</li>
                         <li>Implemented social media strategies and campaigns</li>
@@ -1167,7 +1167,7 @@
             <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class="project-tag">Podcast</div>
-                    <h4 class="project-title">Everybody Leads Podcast</h4>
+                    <h4 class="project-title"><em>Everybody Leads</em> Podcast</h4>
                     <p class="project-desc">Produced and launched the leadership podcast for Baker Donelson's Chairman &amp; CEO, Tim Lupinacci. Handled all technical production including sound engineering, editing, publishing, and social media promotion.</p>
                     <div class="project-tech">
                         <span class="tech-pill">Audio Production</span>
@@ -1545,26 +1545,30 @@
         // ===== TEXT SCRAMBLE ON PROJECT TITLES =====
         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%';
         document.querySelectorAll('.project-title').forEach(title => {
-            const original = title.textContent;
+            const originalHTML = title.innerHTML;
+            const originalText = title.textContent;
             let interval;
 
             title.addEventListener('mouseenter', () => {
                 let iteration = 0;
                 clearInterval(interval);
                 interval = setInterval(() => {
-                    title.textContent = original.split('').map((char, i) => {
-                        if (i < iteration) return original[i];
+                    title.textContent = originalText.split('').map((char, i) => {
+                        if (i < iteration) return originalText[i];
                         if (char === ' ') return ' ';
                         return chars[Math.floor(Math.random() * chars.length)];
                     }).join('');
                     iteration += 1/2;
-                    if (iteration >= original.length) clearInterval(interval);
+                    if (iteration >= originalText.length) {
+                        clearInterval(interval);
+                        title.innerHTML = originalHTML;
+                    }
                 }, 30);
             });
 
             title.addEventListener('mouseleave', () => {
                 clearInterval(interval);
-                title.textContent = original;
+                title.innerHTML = originalHTML;
             });
         });
     </script>
