@@ -89,6 +89,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     <style>
+        /* ========== SKIP LINK ========== */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            z-index: 10000;
+            background: var(--accent);
+            color: var(--white-pure);
+            padding: 12px 24px;
+            border-radius: 0 0 8px 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: top 0.2s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            color: var(--white-pure);
+        }
+
         /* ========== RESET & BASE ========== */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -986,6 +1007,28 @@
             section { padding: 60px 0; }
         }
 
+        /* ========== FOCUS INDICATORS (ACCESSIBILITY) ========== */
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+
+        .hero-cta:focus-visible,
+        .contact-btn:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.25);
+        }
+
+        .nav-toggle:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
         /* ========== REDUCED MOTION (ACCESSIBILITY) ========== */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
@@ -1004,8 +1047,11 @@
 </head>
 <body>
 
+    <!-- SKIP LINK (ACCESSIBILITY) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- SCROLL PROGRESS -->
-    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
     <!-- NAV -->
     <nav>
@@ -1018,7 +1064,7 @@
                 <li><a href="#awards">Awards</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1026,25 +1072,25 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
 
     <!-- HERO -->
     <section class="hero" id="hero">
-        <canvas id="particles"></canvas>
+        <canvas id="particles" aria-hidden="true"></canvas>
         <div class="container">
             <div class="hero-content fade-in">
                 <div class="hero-label">Memphis, TN</div>
                 <h1>Jason <span class="highlight">Plank</span></h1>
                 <p class="hero-headline">Digital Marketing Pro driving growth via AI, Data, SEO & Content Strategy. 20+ years connecting the dots between technology, creativity, and business.</p>
                 <a href="https://www.linkedin.com/in/jasonplank1" target="_blank" rel="noopener" class="hero-cta">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
                     Connect on LinkedIn
                 </a>
             </div>
         </div>
     </section>
 
-    <div class="wave-divider dark-to-light"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,0 C360,60 1080,0 1440,50 L1440,60 L0,60 Z"/></svg></div>
+    <div class="wave-divider dark-to-light" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,0 C360,60 1080,0 1440,50 L1440,60 L0,60 Z"/></svg></div>
 
     <!-- ABOUT -->
     <section class="about" id="about">
@@ -1060,10 +1106,10 @@
                     <p>I enjoy connecting the dots between technology, creativity, and business development, working to support attorneys in reaching their goals and growing client relationships. I make complex platforms more effective, find insights in the data, and stay curious about new tools that can improve how we work and engage.</p>
                     <p>Lately, I've been diving into the many ways AI can help add to and streamline this work. I'm always open to new ideas, new challenges, and conversations about how to do smart marketing in complex environments.</p>
                     <div class="about-interests">
-                        <span class="interest-tag"><span class="emoji">&#127939;</span> Runner</span>
-                        <span class="interest-tag"><span class="emoji">&#127918;</span> Gamer</span>
-                        <span class="interest-tag" id="bengalsTag" style="cursor:pointer"><span class="emoji">&#127944;</span> Bengals Fan</span>
-                        <span class="interest-tag"><span class="emoji">&#129302;</span> AI Enthusiast</span>
+                        <span class="interest-tag"><span class="emoji" aria-hidden="true">&#127939;</span> Runner</span>
+                        <span class="interest-tag"><span class="emoji" aria-hidden="true">&#127918;</span> Gamer</span>
+                        <span class="interest-tag" id="bengalsTag" style="cursor:pointer" role="button" tabindex="0" aria-label="Bengals Fan - click for a surprise"><span class="emoji" aria-hidden="true">&#127944;</span> Bengals Fan</span>
+                        <span class="interest-tag"><span class="emoji" aria-hidden="true">&#129302;</span> AI Enthusiast</span>
                     </div>
                 </div>
                 <div class="about-stats fade-in">
@@ -1088,7 +1134,7 @@
         </div>
     </section>
 
-    <div class="wave-divider light-to-dark"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,50 C480,0 960,60 1440,10 L1440,60 L0,60 Z"/></svg></div>
+    <div class="wave-divider light-to-dark" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,50 C480,0 960,60 1440,10 L1440,60 L0,60 Z"/></svg></div>
 
     <!-- EXPERIENCE -->
     <section class="experience" id="experience">
@@ -1152,7 +1198,7 @@
         </div>
     </section>
 
-    <div class="wave-divider dark-to-light"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,20 C240,60 720,0 1440,40 L1440,60 L0,60 Z"/></svg></div>
+    <div class="wave-divider dark-to-light" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,20 C240,60 720,0 1440,40 L1440,60 L0,60 Z"/></svg></div>
 
     <!-- PROJECTS -->
     <section class="projects" id="projects">
@@ -1178,7 +1224,7 @@
                 <div class="project-card fade-in">
                     <div class="project-tag">Web</div>
                     <h4 class="project-title">Baker Donelson Website Overhaul</h4>
-                    <p class="project-desc">Led a total overhaul of the firm's public website, earning the LMA Southeast award for "Website, Total Overhaul" in 2017. Transformed the digital presence of one of the nation's largest law firms.</p>
+                    <p class="project-desc">Played a pivotal role in the total redesign of Baker Donelson's website, winning an LMA Southeast award for "Website, Total Overhaul." Worked alongside a cross-functional team to transform the digital presence of one of the nation's largest law firms.</p>
                     <div class="project-tech">
                         <span class="tech-pill">Web Development</span>
                         <span class="tech-pill">UX</span>
@@ -1236,7 +1282,7 @@
         </div>
     </section>
 
-    <div class="wave-divider light-to-dark"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,10 C600,60 900,0 1440,30 L1440,60 L0,60 Z"/></svg></div>
+    <div class="wave-divider light-to-dark" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,10 C600,60 900,0 1440,30 L1440,60 L0,60 Z"/></svg></div>
 
     <!-- AWARDS -->
     <section class="awards" id="awards">
@@ -1248,14 +1294,14 @@
             </div>
             <div class="awards-grid">
                 <div class="award-card fade-in">
-                    <div class="award-icon">&#127942;</div>
+                    <div class="award-icon" aria-hidden="true">&#127942;</div>
                     <h3 class="award-title">Winner &mdash; Website, Total Overhaul</h3>
                     <div class="award-issuer">Legal Marketing Association &mdash; Southeast</div>
                     <div class="award-date">September 2017</div>
                     <p class="award-desc">Recognized for leading a complete overhaul of Baker Donelson's public website, earning the top award from the LMA Southeast chapter.</p>
                 </div>
                 <div class="award-card fade-in">
-                    <div class="award-icon">&#127909;</div>
+                    <div class="award-icon" aria-hidden="true">&#127909;</div>
                     <h3 class="award-title">Nominee &mdash; Interactivity</h3>
                     <div class="award-issuer">25th Annual Mid-South Emmy Awards</div>
                     <div class="award-date">January 2011</div>
@@ -1265,7 +1311,7 @@
         </div>
     </section>
 
-    <div class="wave-divider dark-to-light"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,45 L1440,60 L0,60 Z"/></svg></div>
+    <div class="wave-divider dark-to-light" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,45 L1440,60 L0,60 Z"/></svg></div>
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
@@ -1278,11 +1324,11 @@
             <p class="contact-text fade-in">I'm always open to new ideas, new challenges, and conversations about how to do smart marketing in complex environments.</p>
             <div class="contact-links fade-in">
                 <a href="https://www.linkedin.com/in/jasonplank1" target="_blank" rel="noopener" class="contact-btn primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
                     LinkedIn
                 </a>
                 <a href="mailto:jasonplank+websitecontact@gmail.com" class="contact-btn secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     Email Me
                 </a>
             </div>
@@ -1292,7 +1338,7 @@
     </main>
 
     <!-- EASTER EGG TOAST -->
-    <div class="easter-egg-toast" id="easterEgg"></div>
+    <div class="easter-egg-toast" id="easterEgg" role="status" aria-live="polite"></div>
 
     <!-- FOOTER -->
     <footer>
@@ -1308,11 +1354,14 @@
 
         navToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            const expanded = navLinks.classList.contains('active');
+            navToggle.setAttribute('aria-expanded', expanded);
         });
 
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -1534,11 +1583,18 @@
         let bengalsIndex = 0;
 
         if (bengalsTag) {
-            bengalsTag.addEventListener('click', () => {
+            function triggerBengals() {
                 easterEgg.textContent = bengalsPhrases[bengalsIndex % bengalsPhrases.length];
                 bengalsIndex++;
                 easterEgg.classList.add('show');
                 setTimeout(() => easterEgg.classList.remove('show'), 2500);
+            }
+            bengalsTag.addEventListener('click', triggerBengals);
+            bengalsTag.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    triggerBengals();
+                }
             });
         }
 
