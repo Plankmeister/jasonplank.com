@@ -1046,6 +1046,165 @@
             .scroll-progress { display: none; }
             #particles { display: none; }
         }
+
+        /* ========== PRINT STYLESHEET ========== */
+        @media print {
+            *, *::before, *::after {
+                background: transparent !important;
+                color: #000 !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+                animation: none !important;
+                transition: none !important;
+            }
+
+            html, body {
+                font-size: 11pt;
+                line-height: 1.5;
+            }
+
+            /* Hide non-essential elements */
+            nav, .skip-link, .scroll-progress, #particles,
+            .wave-divider, .easter-egg-toast, .hero-label,
+            .section-divider, .hero-cta, footer {
+                display: none !important;
+            }
+
+            /* Reset layout */
+            .hero {
+                min-height: auto !important;
+                padding: 0 !important;
+            }
+
+            .hero-content { padding: 0; }
+
+            .hero h1 {
+                font-size: 24pt !important;
+                margin-bottom: 4pt;
+            }
+
+            .hero h1 .highlight {
+                -webkit-text-fill-color: #000 !important;
+                background: none !important;
+            }
+
+            .hero-headline {
+                color: #333 !important;
+                font-size: 11pt !important;
+                max-width: 100%;
+                margin-bottom: 16pt;
+            }
+
+            section {
+                padding: 16pt 0 !important;
+                break-inside: avoid;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+
+            .section-header { margin-bottom: 12pt !important; }
+            .section-label { font-size: 8pt !important; letter-spacing: 2px; }
+            .section-title { font-size: 16pt !important; }
+
+            /* About section */
+            .about-grid {
+                grid-template-columns: 1fr !important;
+                gap: 12pt !important;
+            }
+
+            .about-text p {
+                font-size: 10pt !important;
+                margin-bottom: 6pt !important;
+            }
+
+            .about-interests { display: none !important; }
+            .about-stats { display: none !important; }
+
+            /* Experience */
+            .timeline { padding-left: 0 !important; }
+            .timeline::before { display: none !important; }
+            .timeline-item::before { display: none !important; }
+            .timeline-item { margin-bottom: 12pt !important; }
+            .timeline-company { font-size: 9pt !important; }
+            .timeline-role { font-size: 12pt !important; }
+            .timeline-dates { font-size: 9pt !important; color: #555 !important; }
+            .timeline-bullets li { font-size: 10pt !important; padding-left: 12pt !important; }
+            .timeline-bullets li::before { background: #000 !important; }
+
+            /* Projects */
+            .projects-grid {
+                grid-template-columns: 1fr !important;
+                gap: 12pt !important;
+                margin-bottom: 16pt !important;
+            }
+
+            .project-card, .project-card.featured {
+                border: 1px solid #ccc !important;
+                padding: 12pt !important;
+                border-radius: 4pt !important;
+                break-inside: avoid;
+            }
+
+            .project-card::after { display: none !important; }
+            .project-tag { border: 1px solid #999 !important; font-size: 7pt !important; }
+            .project-title { font-size: 11pt !important; }
+            .project-desc { font-size: 9pt !important; }
+            .tech-pill { border: 1px solid #aaa !important; font-size: 7pt !important; }
+
+            /* Awards */
+            .awards-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 12pt !important;
+            }
+
+            .award-card {
+                border: 1px solid #ccc !important;
+                padding: 12pt !important;
+                break-inside: avoid;
+            }
+
+            .award-card::before { display: none !important; }
+            .award-card::after { display: none !important; }
+            .award-icon { display: none !important; }
+
+            /* Contact — show as text */
+            .contact { text-align: left !important; }
+            .contact::before { display: none !important; }
+            .contact-links { justify-content: flex-start !important; }
+
+            .contact-btn {
+                border: none !important;
+                padding: 0 !important;
+                font-size: 10pt !important;
+            }
+
+            .contact-btn svg { display: none !important; }
+
+            .contact-btn.primary::after {
+                content: ' — linkedin.com/in/jasonplank1';
+                font-weight: 400;
+            }
+
+            .contact-btn.secondary::after {
+                content: ' — jasonplank+websitecontact@gmail.com';
+                font-weight: 400;
+            }
+
+            /* Links */
+            a[href]::after { content: none !important; }
+
+            /* Education card */
+            .fade-in {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            /* Page breaks */
+            h2, h3 { break-after: avoid; }
+        }
     </style>
 </head>
 <body>
@@ -1160,12 +1319,6 @@
                         <li>Training attorneys and staff on social media best practices for business development</li>
                         <li>Producing podcasts and monitoring key metrics for digital program effectiveness</li>
                     </ul>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-company">Baker Donelson</div>
-                    <div class="timeline-role">Podcast Producer &mdash; <em>Everybody Leads</em></div>
-                    <div class="timeline-dates">Concurrent role with Tim Lupinacci, Chairman &amp; CEO</div>
-                    <p class="timeline-desc">Oversaw all technical aspects of the <em>Everybody Leads</em> podcast including sound engineering, editing, and publishing. Collaborated closely with host and guests to ensure quality recording. Promoted the podcast through targeted social media campaigns.</p>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-company">Baker Donelson</div>
