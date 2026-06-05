@@ -1,7 +1,7 @@
 # Jason Plank — jasonplank.com
 
 ## About
-Jason Plank is a Digital Marketing Strategist based in Memphis, TN with over 20 years of experience leading high-impact online initiatives. He currently works at Baker Donelson, one of the nation's largest law firms, where he manages the firm's digital presence across multiple platforms.
+Jason Plank is a Digital Marketing Manager based in Memphis, TN with over 20 years of experience leading high-impact online initiatives. He currently works at Baker Donelson, one of the nation's largest law firms, where he manages the firm's digital presence across multiple platforms.
 
 ## Professional Focus
 - Digital marketing strategy and execution
@@ -13,14 +13,23 @@ Jason Plank is a Digital Marketing Strategist based in Memphis, TN with over 20 
 - Website development and optimization
 
 ## Current Role
-Digital Marketing Strategist at Baker Donelson (July 2016 – Present, Memphis, TN)
+Digital Marketing Manager at Baker Donelson (May 2026 – Present, Memphis, TN)
+- Leading digital strategy supporting 700+ attorneys across more than 20 offices
+- Driving measurable growth across web, email, SEO, social media, and podcast channels
+- Architecting outbound marketing programs designed to drive lead generation and business development
+- Overseeing the firm's public website and coordinating social media presence
+- Training attorneys and staff on best practices for using social media effectively and compliantly
+- Championing the adoption of AI-powered tools to accelerate content production and surface data insights
+
+## Previous Role
+Digital Marketing Strategist at Baker Donelson (July 2016 – May 2026, Memphis, TN)
 - Plans, develops, and evaluates digital strategy across online platforms
 - Executes outbound marketing programs driving revenue and lead generation
 - Maintains the firm's public website and coordinates social media presence
 - Trains attorneys and staff on social media best practices
 - Produces podcasts and monitors key metrics for digital effectiveness
 
-## Previous Role
+## Earlier Role
 Internet Content Director at WMC-TV / Action News 5 (July 2003 – December 2011, Memphis, TN)
 - Managed content and layout of a local television news website
 - Implemented social media strategies and campaigns
@@ -38,7 +47,7 @@ Otterbein University — B.A. Communication and Media Studies
 - Baker Donelson Website Overhaul: Led award-winning total overhaul of the firm's public website
 - AI-Powered Legal Marketing: Integrating AI tools (Claude, Gemini, ChatGPT) into legal marketing workflows
 - 17-Community News Network: Built a network of community-focused local news websites at WMC-TV
-- Reds Game Center: Hardware project — ESP32-based MLB scoreboard focused on the Cincinnati Reds, with TFT display and MLB Stats API
+- PlankLabs: Etsy store selling fully assembled ESP32-based desk devices — weather stations, ISS satellite trackers, tide clocks, and MLB scoreboards — each in a custom 3D-printed housing with captive portal setup and OTA updates (https://planklabs.etsy.com)
 - Plank Family Meal-o-Matic: Full-stack web app using Google Cloud Run, Firestore, Gemini AI, and Kroger API for automated meal planning
 
 ## Contact

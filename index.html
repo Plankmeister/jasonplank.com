@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason Plank — Legal Digital Marketing Strategist</title>
-    <meta name="description" content="Jason Plank — Legal Digital Marketing Strategist helping law firms grow through AI, SEO & Content Strategy. 20+ years of experience, based in Memphis, TN.">
+    <title>Jason Plank — Legal Digital Marketing Manager</title>
+    <meta name="description" content="Jason Plank — Legal Digital Marketing Manager helping law firms grow through AI, SEO & Content Strategy. 20+ years of experience, based in Memphis, TN.">
     <meta name="author" content="Jason Plank">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jasonplank.com/">
@@ -15,16 +15,16 @@
 
     <!-- Open Graph (Facebook, LinkedIn, Slack, etc.) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Jason Plank — Legal Digital Marketing Strategist">
-    <meta property="og:description" content="Helping law firms grow through AI, SEO & Content Strategy. 20+ years of experience. Digital Marketing Strategist at Baker Donelson.">
+    <meta property="og:title" content="Jason Plank — Legal Digital Marketing Manager">
+    <meta property="og:description" content="Helping law firms grow through AI, SEO & Content Strategy. 20+ years of experience. Digital Marketing Manager at Baker Donelson.">
     <meta property="og:url" content="https://jasonplank.com/">
     <meta property="og:site_name" content="Jason Plank">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Jason Plank — Legal Digital Marketing Strategist">
-    <meta name="twitter:description" content="Helping law firms grow through AI, SEO & Content Strategy. 20+ years of experience. Digital Marketing Strategist at Baker Donelson.">
+    <meta name="twitter:title" content="Jason Plank — Legal Digital Marketing Manager">
+    <meta name="twitter:description" content="Helping law firms grow through AI, SEO & Content Strategy. 20+ years of experience. Digital Marketing Manager at Baker Donelson.">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -33,13 +33,13 @@
         "@type": "Person",
         "name": "Jason Plank",
         "url": "https://jasonplank.com",
-        "jobTitle": "Digital Marketing Strategist",
+        "jobTitle": "Digital Marketing Manager",
         "worksFor": {
             "@type": "Organization",
             "name": "Baker Donelson",
             "url": "https://www.bakerdonelson.com"
         },
-        "description": "Legal Digital Marketing Strategist helping law firms grow through AI, SEO & Content Strategy. 20+ years of experience based in Memphis, TN.",
+        "description": "Legal Digital Marketing Manager helping law firms grow through AI, SEO & Content Strategy. 20+ years of experience based in Memphis, TN.",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Memphis",
@@ -72,7 +72,7 @@
         "hasOccupation": [
             {
                 "@type": "Occupation",
-                "name": "Digital Marketing Strategist",
+                "name": "Digital Marketing Manager",
                 "occupationLocation": {
                     "@type": "City",
                     "name": "Memphis, TN"
@@ -503,6 +503,64 @@
             font-size: 0.85rem;
             color: var(--gray);
             margin-top: 4px;
+        }
+
+        /* ========== NOW ========== */
+        .now { background: var(--black-light); padding-top: 20px; }
+
+        .now-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .now-card {
+            background: var(--black-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .now-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .now-category {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .now-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .now-item {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .now-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .now-platform {
+            font-size: 0.8rem;
+            color: var(--gray);
         }
 
         /* ========== EXPERIENCE ========== */
@@ -1003,6 +1061,7 @@
             .nav-toggle { display: flex; }
 
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .now-grid { grid-template-columns: 1fr; }
             .awards-grid { grid-template-columns: 1fr; }
             .projects-grid { grid-template-columns: 1fr; }
             .contact-links { flex-direction: column; align-items: center; }
@@ -1066,7 +1125,7 @@
             /* Hide non-essential elements */
             nav, .skip-link, .scroll-progress, #particles,
             .wave-divider, .easter-egg-toast, .hero-label,
-            .section-divider, .hero-cta, footer {
+            .section-divider, .hero-cta, .now, footer {
                 display: none !important;
             }
 
@@ -1243,7 +1302,7 @@
             <div class="hero-content fade-in">
                 <div class="hero-label">Memphis, TN</div>
                 <h1>Jason <span class="highlight">Plank</span></h1>
-                <p class="hero-headline">Legal Digital Marketing Strategist helping law firms grow through AI, SEO &amp; Content Strategy. 20+ years connecting the dots between technology, creativity, and business.</p>
+                <p class="hero-headline">Legal Digital Marketing Manager helping law firms grow through AI, SEO &amp; Content Strategy. 20+ years connecting the dots between technology, creativity, and business.</p>
                 <a href="https://www.linkedin.com/in/jasonplank1" target="_blank" rel="noopener" class="hero-cta">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
                     Connect on LinkedIn
@@ -1264,7 +1323,7 @@
             </div>
             <div class="about-grid">
                 <div class="about-text fade-in">
-                    <p>Most law firms are sitting on untapped digital potential &mdash; I've spent over two decades helping unlock it. As the Digital Marketing Strategist at Baker Donelson, one of the nation's largest law firms, I lead the firm's digital presence across web, email, SEO, social media, data analytics, and podcast production.</p>
+                    <p>Most law firms are sitting on untapped digital potential &mdash; I've spent over two decades helping unlock it. As the Digital Marketing Manager at Baker Donelson, one of the nation's largest law firms, I lead the firm's digital presence across web, email, SEO, social media, data analytics, and podcast production.</p>
                     <p>My work sits at the intersection of technology, creativity, and business development &mdash; translating complex platforms into practical tools that help attorneys build client relationships and grow revenue. That means optimizing websites for visibility, building email campaigns that drive measurable engagement, and training attorneys to use social media with confidence.</p>
                     <p>Lately, I've been deeply focused on how AI can accelerate and elevate this work, from streamlining content production to surfacing insights in data faster than ever before. I'm at my best in complex environments where connecting the dots between technology and business strategy actually matters.</p>
                     <div class="about-interests">
@@ -1296,6 +1355,40 @@
         </div>
     </section>
 
+    <!-- NOW -->
+    <section class="now" id="now">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Right Now</div>
+                <h2 class="section-title">What I'm Into</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="now-grid">
+                <div class="now-card fade-in">
+                    <div class="now-category">Reading</div>
+                    <div class="now-items">
+                        <span class="now-item"><em>Dune</em> by Frank Herbert</span>
+                        <span class="now-item"><em>Meditations</em> by Marcus Aurelius</span>
+                    </div>
+                </div>
+                <div class="now-card fade-in">
+                    <div class="now-category">Gaming</div>
+                    <div class="now-items">
+                        <span class="now-item">Settlers of Catan <span class="now-platform">Nintendo Switch</span></span>
+                        <span class="now-item">The Oregon Trail <span class="now-platform">Nintendo Switch</span></span>
+                        <span class="now-item">Star Wars Outlaws <span class="now-platform">PS5</span></span>
+                    </div>
+                </div>
+                <div class="now-card fade-in">
+                    <div class="now-category">Projects</div>
+                    <div class="now-items">
+                        <span class="now-item">Professional Football Gamecenter for <a href="https://planklabs.etsy.com" target="_blank" rel="noopener">Etsy store</a> (coming September 2026)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="wave-divider light-to-dark" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,50 C480,0 960,60 1440,10 L1440,60 L0,60 Z"/></svg></div>
 
     <!-- EXPERIENCE -->
@@ -1309,8 +1402,21 @@
             <div class="timeline">
                 <div class="timeline-item fade-in">
                     <div class="timeline-company">Baker Donelson</div>
+                    <div class="timeline-role">Digital Marketing Manager</div>
+                    <div class="timeline-dates">May 2026 &ndash; Present &middot; Memphis, TN</div>
+                    <ul class="timeline-bullets">
+                        <li>Directing digital strategy across more than 20 offices supporting 700+ attorneys</li>
+                        <li>Driving measurable growth across web, SEO, social media, and podcast channels</li>
+                        <li>Designing outbound marketing programs to generate leads and support business development</li>
+                        <li>Managing the firm's public website and coordinating its social media presence</li>
+                        <li>Training attorneys and staff on effective, compliant use of social media for business development</li>
+                        <li>Advancing AI-powered tools to accelerate content production and uncover data-driven insights</li>
+                    </ul>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-company">Baker Donelson</div>
                     <div class="timeline-role">Digital Marketing Strategist</div>
-                    <div class="timeline-dates">July 2016 &ndash; Present &middot; Memphis, TN</div>
+                    <div class="timeline-dates">July 2016 &ndash; May 2026 &middot; Memphis, TN</div>
                     <ul class="timeline-bullets">
                         <li>Leading digital strategy supporting 700+ attorneys across more than 20 offices</li>
                         <li>Driving measurable growth across web, email, SEO, social media, and podcast channels</li>
@@ -1318,19 +1424,20 @@
                         <li>Overseeing the firm's public website and coordinating social media presence</li>
                         <li>Training attorneys and staff on best practices for using social media effectively and compliantly</li>
                         <li>Championing the adoption of AI-powered tools to accelerate content production and surface data insights</li>
+                        <li>Promoted to Digital Marketing Manager in May 2026</li>
                     </ul>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-company">Baker Donelson</div>
                     <div class="timeline-role">Digital Marketing Specialist</div>
-                    <div class="timeline-dates">December 2011 &ndash; July 2016 &middot; Memphis, TN</div>
+                    <div class="timeline-dates">December 2011 &ndash; May 2026 &middot; Memphis, TN</div>
                     <ul class="timeline-bullets">
                         <li>Built and managed the digital marketing foundation for one of the nation's largest law firms</li>
                         <li>Executed email marketing campaigns, analyzed performance data, and translated results into actionable improvements</li>
                         <li>Trained attorneys and staff on social media best practices for business development</li>
                         <li>Constructed micro-websites and targeted blogs to support specific marketing initiatives</li>
                         <li>Advised on SEO strategy to improve search visibility across the firm's web properties</li>
-                        <li>Promoted to Digital Marketing Strategist in July 2016</li>
+                        <li>Promoted to Digital Marketing Manager in May 2026</li>
                     </ul>
                 </div>
                 <div class="timeline-item fade-in">
@@ -1412,15 +1519,13 @@
             <h3 class="projects-subtitle fade-in">Recent Personal &amp; Side Projects</h3>
             <div class="projects-grid">
                 <div class="project-card featured fade-in">
-                    <div class="project-tag">Hardware + API</div>
-                    <h4 class="project-title">Reds Game Center</h4>
-                    <p class="project-desc">A dedicated, always-on MLB scoreboard focused on the Cincinnati Reds, built around an ESP32 microcontroller and a 3.5" TFT display. Connects to the MLB Stats API over WiFi, pulling live game data, standings, schedules, and statistics across 12 purpose-built screens. Runs headless &mdash; plug it in, it configures itself through a captive portal, and from then on it just goes.</p>
+                    <div class="project-tag">Hardware + Etsy</div>
+                    <h4 class="project-title"><a href="https://planklabs.etsy.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">PlankLabs</a></h4>
+                    <p class="project-desc">An Etsy store born from a love of tinkering with ESP32 microcontrollers and exploring their versatile uses. PlankLabs offers a growing lineup of fully assembled, WiFi-connected desk devices &mdash; from live weather stations and an ISS satellite tracker to a tide clock and MLB scoreboard. Each device ships in a custom 3D-printed housing with a captive portal for seamless setup and automatic over-the-air firmware updates.</p>
                     <div class="project-tech">
                         <span class="tech-pill">ESP32</span>
-                        <span class="tech-pill">TFT Display</span>
-                        <span class="tech-pill">MLB Stats API</span>
-                        <span class="tech-pill">WiFi</span>
-                        <span class="tech-pill">C++</span>
+                        <span class="tech-pill">3D Printing</span>
+                        <span class="tech-pill">Etsy</span>
                     </div>
                 </div>
                 <div class="project-card featured fade-in">
@@ -1565,7 +1670,6 @@
         root.style.setProperty('--accent-glow', `rgba(${theme.rgb}, 0.3)`);
         root.style.setProperty('--accent-rgb', theme.rgb);
 
-        // Store for particle canvas
         const accentRgb = theme.rgb;
 
         // ===== ANIMATED NUMBER COUNTERS =====
