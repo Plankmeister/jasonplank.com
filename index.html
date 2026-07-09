@@ -229,7 +229,6 @@
             text-decoration: none;
             transition: font-stretch 0.6s var(--ease-out);
         }
-        .logo:hover { font-stretch: 125%; }
         .logo .dot { color: var(--accent); }
 
         .topnav { display: flex; align-items: stretch; list-style: none; }
@@ -251,7 +250,7 @@
 
         .topnav a i { font-style: normal; color: var(--accent); transition: color 0.25s; }
 
-        .topnav a:hover, .topnav a.active {
+        .topnav a.active {
             background: var(--ink);
             color: var(--paper);
         }
@@ -278,7 +277,6 @@
             border: 1px solid var(--line-strong);
             transition: transform 0.4s var(--ease-out);
         }
-        .edition-chip:hover .swatch { transform: rotate(135deg); }
 
         .menu-btn {
             display: none;
@@ -445,9 +443,6 @@
             color: transparent;
             -webkit-text-stroke: 2.5px var(--ink);
         }
-        /* The plank fills with ink. Of course it does. */
-        .hero-name:hover .l2 { color: var(--accent); -webkit-text-stroke-color: var(--accent); }
-
         .hero-epigraph {
             font-family: var(--font-mono);
             font-size: 0.72rem;
@@ -520,11 +515,6 @@
         .btn-solid { background: var(--accent); color: var(--on-accent); border-color: var(--ink); }
         .btn-ghost { background: transparent; color: inherit; border-color: currentColor; }
 
-        .btn:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 4px 4px 0 var(--ink);
-        }
-        .blk-ink .btn:hover { box-shadow: 4px 4px 0 var(--paper); }
         .blk-ink .btn-solid { border-color: var(--paper); }
 
         /* ========== MARQUEE ========== */
@@ -540,7 +530,6 @@
             width: max-content;
             animation: marquee 36s linear infinite;
         }
-        .marquee:hover .marquee-track { animation-play-state: paused; }
         .marquee-group {
             display: inline-flex;
             align-items: center;
@@ -598,12 +587,6 @@
             color: inherit;
             transition: border-color 0.25s, background 0.25s, color 0.25s, transform 0.25s;
         }
-        .interest-tag:hover {
-            border-color: var(--accent);
-            background: var(--accent);
-            color: var(--on-accent);
-            transform: translateY(-2px);
-        }
         .interest-tag .emoji { font-size: 1rem; }
 
         .about-stats {
@@ -622,7 +605,6 @@
             transition: background 0.3s, color 0.3s;
         }
         .stat-card:last-child { border-bottom: none; }
-        .stat-card:hover { background: var(--accent); color: var(--on-accent); }
 
         .stat-number {
             font-weight: 800;
@@ -633,7 +615,6 @@
             color: var(--accent);
             transition: color 0.3s;
         }
-        .stat-card:hover .stat-number { color: var(--on-accent); }
 
         .stat-label {
             font-family: var(--font-mono);
@@ -690,7 +671,6 @@
             font-size: 0.8rem;
         }
         .now-item a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
-        .now-item a:hover { color: var(--accent); }
 
         .now-platform {
             display: inline-block;
@@ -718,7 +698,6 @@
             transition: background 0.25s, padding-left 0.35s var(--ease-out);
         }
         details.xp summary::-webkit-details-marker { display: none; }
-        details.xp summary:hover { padding-left: 14px; background: rgba(var(--ink-rgb), 0.035); }
 
         .xp-dates {
             font-family: var(--font-mono);
@@ -851,8 +830,6 @@
         .proj-grid .proj-card:nth-child(2n) { border-right: none; }
         .proj-grid .proj-card:nth-last-child(-n+2) { border-bottom: none; }
 
-        .proj-card:hover { background: var(--accent); color: var(--on-accent); }
-
         .proj-top {
             display: flex;
             justify-content: space-between;
@@ -883,8 +860,6 @@
             transform: translate(-6px, 6px);
             transition: opacity 0.3s, transform 0.3s var(--ease-out);
         }
-        .proj-card:hover .proj-arrow { opacity: 1; transform: translate(0, 0); }
-
         .proj-desc { font-size: 0.95rem; line-height: 1.65; flex: 1; }
 
         .proj-tech { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -900,7 +875,6 @@
         .tech-pill::after { content: ']'; opacity: 0.6; }
 
         .proj-card.featured { border-top: 4px solid var(--accent); }
-        .proj-card.featured:hover { border-top-color: var(--ink); }
 
         /* ========== AWARDS ========== */
         .awards-grid {
@@ -977,7 +951,6 @@
             -webkit-text-stroke: 2px var(--ink);
             transition: color 0.35s;
         }
-        .contact-title:hover em { color: var(--accent); -webkit-text-stroke-color: var(--accent); }
 
         .contact-row {
             display: grid;
@@ -999,7 +972,6 @@
         }
 
         footer .up { text-decoration: none; color: var(--accent); }
-        footer .up:hover { text-decoration: underline; text-underline-offset: 3px; }
 
         .foot-grid {
             display: grid;
@@ -1059,7 +1031,6 @@
             cursor: pointer;
             transition: background 0.25s, color 0.25s, border-color 0.25s;
         }
-        .reink:hover { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 
         .swatches { display: flex; gap: 6px; margin-top: 12px; }
         .swatches i {
@@ -1144,6 +1115,7 @@
             background: transparent;
             width: min(94vw, 760px);
             max-height: 88vh;
+            max-height: 88svh;
         }
         dialog.trail::backdrop { background: rgba(0, 0, 0, 0.82); }
 
@@ -1158,6 +1130,7 @@
             display: flex;
             flex-direction: column;
             max-height: 88vh;
+            max-height: 88svh;
         }
         .crt::after {
             content: '';
@@ -1247,6 +1220,29 @@
         .crt-actions button:hover:not(:disabled) { background: #58FF9B; color: #070C08; }
         .crt-actions button:hover:not(:disabled) small { opacity: 0.85; }
         .crt-actions button:disabled { opacity: 0.35; cursor: default; }
+
+        /* ========== HOVER — mouse-driven devices only, so touch taps never stick ========== */
+        @media (hover: hover) {
+            .logo:hover { font-stretch: 125%; }
+            .topnav a:hover { background: var(--ink); color: var(--paper); }
+            .edition-chip:hover .swatch { transform: rotate(135deg); }
+            /* The plank fills with ink. Of course it does. */
+            .hero-name:hover .l2 { color: var(--accent); -webkit-text-stroke-color: var(--accent); }
+            .btn:hover { transform: translate(-3px, -3px); box-shadow: 4px 4px 0 var(--ink); }
+            .blk-ink .btn:hover { box-shadow: 4px 4px 0 var(--paper); }
+            .marquee:hover .marquee-track { animation-play-state: paused; }
+            .interest-tag:hover { border-color: var(--accent); background: var(--accent); color: var(--on-accent); transform: translateY(-2px); }
+            .stat-card:hover { background: var(--accent); color: var(--on-accent); }
+            .stat-card:hover .stat-number { color: var(--on-accent); }
+            .now-item a:hover { color: var(--accent); }
+            details.xp summary:hover { padding-left: 14px; background: rgba(var(--ink-rgb), 0.035); }
+            .proj-card:hover { background: var(--accent); color: var(--on-accent); }
+            .proj-card:hover .proj-arrow { opacity: 1; transform: translate(0, 0); }
+            .proj-card.featured:hover { border-top-color: var(--ink); }
+            .contact-title:hover em { color: var(--accent); -webkit-text-stroke-color: var(--accent); }
+            footer .up:hover { text-decoration: underline; text-underline-offset: 3px; }
+            .reink:hover { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+        }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 960px) {
@@ -2125,6 +2121,14 @@
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHero);
         let rzT;
         window.addEventListener('resize', () => { clearTimeout(rzT); rzT = setTimeout(fitHero, 120); });
+        window.addEventListener('pageshow', fitHero);
+        if (window.ResizeObserver && heroBox) {
+            let roW = 0;
+            new ResizeObserver(entries => {
+                const w = entries[0].contentRect.width;
+                if (w && Math.abs(w - roW) > 1) { roW = w; fitHero(); }
+            }).observe(heroBox);
+        }
 
         /* ========== LOAD ANIMATION ========== */
         const markLoaded = () => document.documentElement.classList.add('loaded');
