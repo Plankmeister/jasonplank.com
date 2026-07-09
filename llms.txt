@@ -14,6 +14,7 @@ Jason Plank is a Digital Marketing Manager based in Memphis, TN with over 20 yea
 
 ## Current Role
 Digital Marketing Manager at Baker Donelson (May 2026 – Present, Memphis, TN)
+- Led the firm to the No. 1 ranking in 9Sail's 2026 Digital Visibility Index of the Am Law 200 (up 99 positions year over year)
 - Leading digital strategy supporting 700+ attorneys across more than 20 offices
 - Driving measurable growth across web, email, SEO, social media, and podcast channels
 - Architecting outbound marketing programs designed to drive lead generation and business development
@@ -39,6 +40,7 @@ Internet Content Director at WMC-TV / Action News 5 (July 2003 – December 2011
 Otterbein University — B.A. Communication and Media Studies
 
 ## Awards
+- Baker Donelson Ranked No. 1 — 9Sail 2026 Digital Visibility Index of the Am Law 200 (2026)
 - LMA Southeast Winner — Website, Total Overhaul (September 2017)
 - Mid-South Emmy Nominee — Interactivity, 25th Annual Mid-South Emmy Awards (January 2011)
 
@@ -47,7 +49,7 @@ Otterbein University — B.A. Communication and Media Studies
 - Baker Donelson Website Overhaul: Led award-winning total overhaul of the firm's public website
 - AI-Powered Legal Marketing: Integrating AI tools (Claude, Gemini, ChatGPT) into legal marketing workflows
 - 17-Community News Network: Built a network of community-focused local news websites at WMC-TV
-- PlankLabs: Etsy store selling fully assembled ESP32-based desk devices — weather stations, ISS satellite trackers, tide clocks, and MLB scoreboards — each in a custom 3D-printed housing with captive portal setup and OTA updates (https://planklabs.etsy.com)
+- PlankLabs: Etsy store selling fully assembled ESP32-based desk devices — desktop weather stations ("Storm Sentinel"), ISS satellite trackers, and tide clocks — each in a custom 3D-printed housing with captive portal setup and OTA updates (https://planklabs.etsy.com)
 - Plank Family Meal-o-Matic: Full-stack web app using Google Cloud Run, Firestore, Gemini AI, and Kroger API for automated meal planning
 
 ## Contact
