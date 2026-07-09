@@ -201,8 +201,11 @@
             background: var(--paper);
             color: var(--ink);
             border-bottom: 1px solid var(--line-strong);
-            transition: background 0.4s, color 0.4s;
+            transition: background 0.4s, color 0.4s, transform 0.5s var(--ease-out);
         }
+
+        /* The bar waits offstage until you start scrolling — the hero already says the name. */
+        html.js .topbar:not(.shown):not(:focus-within) { transform: translateY(calc(-100% - 2px)); }
 
         .topbar-in {
             max-width: var(--max);
@@ -1654,7 +1657,7 @@
             <div class="proj-grid rv">
                 <article class="proj-card">
                     <div class="proj-top"><span class="tag">Podcast</span><span class="num">P.01</span></div>
-                    <h4 class="proj-title" data-scramble><em>Everybody Leads</em> Podcast</h4>
+                    <h4 class="proj-title"><a href="https://everybody-leads.simplecast.com/" target="_blank" rel="noopener"><em>Everybody Leads</em> Podcast</a></h4>
                     <span class="proj-arrow" aria-hidden="true">↗</span>
                     <p class="proj-desc">Produced and launched the leadership podcast for Baker Donelson's Chairman &amp; CEO, Tim Lupinacci. Handled all technical production including sound engineering, editing, publishing, and social media promotion.</p>
                     <div class="proj-tech">
@@ -1987,15 +1990,18 @@
             menuBtn.textContent = 'Menu';
         }));
 
-        /* ========== ACTIVE NAV ========== */
+        /* ========== ACTIVE NAV / TOPBAR REVEAL ========== */
         const sections = $$('section[id]');
         const navLinks = $$('#topnav a');
+        const topbarEl = $('.topbar');
         let scrollTick = false;
         function onScroll() {
             const y = window.scrollY;
             let current = '';
             sections.forEach(s => { if (y >= s.offsetTop - 120) current = s.id; });
             navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+            if (y > 90) topbarEl.classList.add('shown');
+            else if (y < 30) topbarEl.classList.remove('shown');
             const max = document.documentElement.scrollHeight - innerHeight;
             const pct = max > 0 ? Math.min(100, Math.round(y / max * 100)) : 0;
             $('#scrollPct').textContent = 'SCROLL — ' + String(pct).padStart(3, '0') + '%';
